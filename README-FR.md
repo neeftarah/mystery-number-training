@@ -1,6 +1,6 @@
 # Apprendre à programmer par le jeu
 
-L'objectif de cette série est d'apprendre les bases de la prgrammation dans divers langages autour d'un jeu simple.
+L'objectif de cette série est d'apprendre les bases de la programmation dans divers langages autour d'un jeu simple.
 Elle est destinées aux débutants en programmation ou aux développeurs souhaitant apprendre rapidement les bases d'un autre langage.
 
 Les principes de programmation nécessaires seront expliqués dans ce document de manière générale, puis chaque dossier correspondant à un langage de programmation contiendra un ficher d'explications détaillée comme celui-ci pour le langage en question afin de présenter la syntaxe de chaque langages.
@@ -44,7 +44,7 @@ Un 1er menu propose de choisir une difficulté :
 4. Personnalisé
 
 #### 3. (bis) Difficulté personnalisée
-Si la difficulté choisie est "4. Personnalisé", le programe invite le(s) joueur(s) à saisir le nombre maximum souhaité (inférieur à la taille d'un "_entier long non-signé_")
+Si la difficulté choisie est "4. Personnalisé", le programme invite le(s) joueur(s) à saisir le nombre maximum souhaité (inférieur à la taille d'un "_entier long non-signé_")
 
 #### 4. Mode de jeu
 Le jeu pourra être jouer à un ou deux joueurs.
@@ -55,36 +55,36 @@ Le jeu pourra être jouer à un ou deux joueurs.
 Un menu demandera quel mode de jeu utiliser.
 
 #### 5. Pseudo du/des joueur(s)
-Le programe demande le(s) nom(s) du/des joueur(s). et le(s) stock.
+Le programme demande le(s) nom(s) du/des joueur(s). et le(s) stock.
 
-#### 6. Deroulement d'une partie
-Le programe invite le joueur à saisir un nombre entre 0 et le maximum choisi par la difficulté.
+#### 6. Déroulement d'une partie
+Le programme invite le joueur à saisir un nombre entre 0 et le maximum choisi par la difficulté.
 
 Le joueur saisie un nombre :
 
-* Si le joueur n'a pas saisie un nombre valide, le programe en informe le joueur et lui demande à nouveau de saisir un nombre.
-* Si le nombre saisie est plus petit que le nombre mystère, le programe affiche "Le nombre mystère est plus grand !"
-* Si le nombre saisie est plus grand que le nombre mystère, le programe affiche "Le nombre mystère est plus petit !"
-* Si le nombre saisie est égal au nombre mystère, la partie est gagnée, le programe affiche "BRAVO ! Vous avez trouver le nombre mystère en X coups et Y secondes". Le score du joueur est afficher en dessous dans une liste des 10 meilleurs scores.
+* Si le joueur n'a pas saisie un nombre valide, le programme en informe le joueur et lui demande à nouveau de saisir un nombre.
+* Si le nombre saisie est plus petit que le nombre mystère, le programme affiche "Le nombre mystère est plus grand !"
+* Si le nombre saisie est plus grand que le nombre mystère, le programme affiche "Le nombre mystère est plus petit !"
+* Si le nombre saisie est égal au nombre mystère, la partie est gagnée, le programme affiche "BRAVO ! Vous avez trouver le nombre mystère en X coups et Y secondes". Le score du joueur est afficher en dessous dans une liste des 10 meilleurs scores.
 
 A chaque proposition d'un nombre valide, le compteur de coup (X) est incrémenté de 1.
 
-Un chronomètre est démaré en début de partie (au 1er nombre saisie) et représente le temps de jeu (Y).
+Un chronomètre est démarré en début de partie (au 1er nombre saisie) et représente le temps de jeu (Y).
 
 
 #### 7. Score
 Une fois la partie terminé, le score est calculé comme suit et est afficher avec les 10 meilleurs scores.
-Si le score du joueur est parmis les 10 meilleurs, son score, son pseudo, le nombre de coups, la difficulté, le temps mis et la date sont stockés dans un fichier texte au format CSV.
+Si le score du joueur est parmi les 10 meilleurs, son score, son pseudo, le nombre de coups, la difficulté, le temps mis et la date sont stockés dans un fichier texte au format CSV.
 
 * Score = Nombre maximum - nombre de coup + Nombre maximum - temps écoulé en secondes.
 
 #### 8. Nouvelle partie
 S'il s'agit d'une partie MULTI, le joueur 2 joue sa partie et les scores des 2 joueurs sont comparés.
 
-S'il s'agit d'une partie SOLO ou que le 2e joueur a déjà joué sa partie, le programe propose au(x) joueur(s) de faire une nouvelle partie (avec les même paramètres).
+S'il s'agit d'une partie SOLO ou que le 2e joueur a déjà joué sa partie, le programme propose au(x) joueur(s) de faire une nouvelle partie (avec les même paramètres).
 Un nouveau nombre aléatoire est alors choisit et la partie recommence.
 
-Si le(s) joueur(s) ne souhaite(nt) pas rejouer, un message de remerciement s'affiche puis le programe se termine à l'appui de n'importe quelle touche.
+Si le(s) joueur(s) ne souhaite(nt) pas rejouer, un message de remerciement s'affiche puis le programme se termine à l'appui de n'importe quelle touche.
 
 ## La programmation
 ### les variables
@@ -112,11 +112,11 @@ Si le(s) joueur(s) ne souhaite(nt) pas rejouer, un message de remerciement s'aff
 ## Contribution
 Toute contribution est la bienvenue !
 
-L'objectif de ce programe est de découvrir et de faire découvrir de nouveaux langages de programmation.
+L'objectif de ce programme est de découvrir et de faire découvrir de nouveaux langages de programmation.
 
 Si vous souhaitez contribué, vous pouvez :
 
-* **Proposer un nouveau langage de programation** avec **les fichiers sources** du jeu dans ce langage et un **fichier README** détaillant la syntaxe et les particularités du langage
+* **Proposer un nouveau langage de programmation** avec **les fichiers sources** du jeu dans ce langage et un **fichier README** détaillant la syntaxe et les particularités du langage
 * **Proposer une nouvelle traduction** (des fichiers README et des traductions du jeu) **ou des corrections** d'orthographe ou de traduction.
 * **Proposer des améliorations** sur les codes sources d'un ou plusieurs langages
-* **En faisant connaitre ce dépôt**.
+* **En faisant connaître ce dépôt**.
