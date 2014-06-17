@@ -14,6 +14,7 @@ Le programme nous renvoi alors un message nous indiquant si le nombre aléatoire
 
 ### Les besoins du jeu
 Afin de réaliser notre jeu avec le maximum d'options, nous devront apprendre à utiliser :
+
 1. les variables
 2. Les conditions
 3. les boucles
@@ -34,7 +35,7 @@ Tout d'abord, nous afficherons un message de présentation qui restera afficher 
 Les différentes langues disponibles sont présentées au joueur qui devra choisir celle qu'il souhaite.
 En fonction de sa saisie, le fichier de langue correspondant est chargé.
 
-#### 2. Difficulté
+#### 3. Difficulté
 Un 1er menu propose de choisir une difficulté :
 
 1. De 1 à 100
