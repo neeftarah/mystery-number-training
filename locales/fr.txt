@@ -1,0 +1,28 @@
+Français
+Veuillez sélectionner le mode de jeu souhaité :
+Mode SOLO : un seul joueur
+Mode MULTI : 2 joueurs
+Veuillez sélectionner une difficulté :
+De %d à %d
+Difficulté personnalisée
+Veuillez saisir le nombre maximum.
+%s, veuillez saisir le nombre mystère. %s, pas de triche, on ne regarde pas !
+Quel est votre nom ?
+Joueur %d quel est votre nom ?
+Le nombre mystère est plus grand !
+Le nombre mystère est plus petit !
+BRAVO ! Vous avez trouver le nombre mystère (%d) en %s coups, %d minute(s) et %d seconde(s)
+Souhaitez-vous rejouer ? (O/n)
+%s, vous devez trouver un nombre aléatoire entre 0 et %d
+%s, vous devez trouver le nombre mystère de %s
+Saisissez un nombre :
+%s : nombre de coup = %d ; temps = %dmin %ds ; score = %d
+%s gagne la partie !
+Vous devez saisir un nombre plus petit ! Celui-ci dépasse la difficulté maximum.
+Match null !
+MEILLEURS SCORES
+JOUEUR
+TENTATIVES
+TEMPS
+SCORE
+DATE

@@ -29,24 +29,13 @@ Afin de réaliser notre jeu avec le maximum d'options, nous devront apprendre à
 
 ### Fonctionnalités attendues
 #### 1. Affichage d'un message de présentation
-Tout d'abord, nous afficherons un message de présentation qui restera afficher 3s.
+Tout d'abord, nous afficherons un message de présentation qui restera afficher 1s.
 
 #### 2. Choix de la langue
 Les différentes langues disponibles sont présentées au joueur qui devra choisir celle qu'il souhaite.
 En fonction de sa saisie, le fichier de langue correspondant est chargé.
 
-#### 3. Difficulté
-Un 1er menu propose de choisir une difficulté :
-
-1. De 1 à 100
-2. De 1 à 1000
-3. De 1 à 10 000
-4. Personnalisé
-
-#### 3. (bis) Difficulté personnalisée
-Si la difficulté choisie est "4. Personnalisé", le programme invite le(s) joueur(s) à saisir le nombre maximum souhaité (inférieur à la taille d'un "_entier long non-signé_")
-
-#### 4. Mode de jeu
+#### 3. Mode de jeu
 Le jeu pourra être jouer à un ou deux joueurs.
 
 1. **Le mode SOLO :** L'ordinateur choisit un nombre aléatoire et le joueur doit le trouver.
@@ -54,8 +43,22 @@ Le jeu pourra être jouer à un ou deux joueurs.
 
 Un menu demandera quel mode de jeu utiliser.
 
-#### 5. Pseudo du/des joueur(s)
+#### 4. Pseudo du/des joueur(s)
 Le programme demande le(s) nom(s) du/des joueur(s). et le(s) stock.
+
+#### 5. Difficulté
+Si le mode de jeu est SOLO, le programme demande de choisir une difficulté :
+
+1. De 1 à 100
+2. De 1 à 1000
+3. De 1 à 10 000
+4. Personnalisé
+
+#### 5. (bis) Difficulté personnalisée
+Si la difficulté choisie est "4. Personnalisé", le programme invite le(s) joueur(s) à saisir le nombre maximum souhaité (inférieur à la taille d'un "_entier long non-signé_")
+
+#### 5. (ter) nombre mystère en partie MULTI
+Si le mode de jeu sélectionné est MULTI, le programme demande au joueur 2 de saisir le nombre mystère.
 
 #### 6. Déroulement d'une partie
 Le programme invite le joueur à saisir un nombre entre 0 et le maximum choisi par la difficulté.
