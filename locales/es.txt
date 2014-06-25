@@ -1,1 +1,31 @@
 Español
+Por favor, seleccione el juego deseado de modo:
+SOLO: solo jugador
+MULTI: 2 jugadores
+Por favor seleccione una dificultad:
+Desde %d a %d
+dificultad personalizada
+Por favor, introduzca el número máximo
+%s, por favor ingrese el número misterioso. %s, sin trampas, no se ven!
+¿Cuál es su nombre?
+¿Jugador %d cuál es su nombre?
+El número misterioso es más grande!
+El número misterioso es más pequeño!
+BIEN HECHO! Usted encuentra el número misterioso (%d) en %d intentos, %d minuto(s) y %d segundo(s)
+¿Quieres jugar de nuevo? (S/n)
+%s, tienes que encontrar un número aleatorio entre 0 y %d
+%s, tienes que encontrar el misterio de %s
+Introduzca un número:
+%s: número de intentos = %d; tiempo = %d min %s s; puntuación = %d
+%s ganar!
+Debe ingresar un número más pequeño! Esto supera la dificultad máxima.
+Nula partido!
+PUNTUACIONES MÀS ALTAS
+JUGADORES
+INTENTOS
+TIEMPOS
+PUNTUACIONES
+FECHA
+Por favor, introduzca un entero
+Por favor ingrese un nombre válido
+Por favor, introduzca un carácter válido
