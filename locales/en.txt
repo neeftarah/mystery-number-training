@@ -1,1 +1,31 @@
 English
+Please select the desired game mode:
+SOLO: single player
+MULTI: 2 players
+Please select a difficulty:
+From %d to %d
+Custom difficulty
+Please enter the maximum number
+%s, please enter the mystery number. %s, no cheating, don't look!
+What is your name?
+Player %d what is your name?
+The mystery number is bigger!
+The mystery number is smaller!
+WELL DONE ! You find the mystery number (%d) in %s hits, %d minute(s) and %d second(s)
+Would you like to play again? (Y/n)
+%s, you have to find a random number between 0 and %d
+%s, you must find the mystery of %s
+Enter a number:
+%s : number of attempts = %d ; time = %d min %ds ; score = %d
+%s win !
+You must enter a smaller number! This exceeds the maximum difficulty.
+Match null!
+HIGH SCORES
+PLAYER
+ATTEMPTS
+TIME
+SCORE
+DATE
+Please enter an integer
+Please enter a valid name
+Please enter a valid character
