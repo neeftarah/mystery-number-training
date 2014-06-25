@@ -26,3 +26,6 @@ TENTATIVES
 TEMPS
 SCORE
 DATE
+Veuillez saisir un nombre entier
+Veuillez saisir un nom valide
+Veuillez saisir un caractère valide
