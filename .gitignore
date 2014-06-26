@@ -1,0 +1,7 @@
+# exclude everything except directory source files - Add new source langages
+/*
+!/.gitignore
+!/*.php
+!/*.py
+!/*.adb
+!/*.c
