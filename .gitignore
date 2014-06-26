@@ -1,7 +1,14 @@
-# exclude everything except directory source files - Add new source langages
+# exclude everything except source files, langages and documentations - Add new source langages
 /*
+
+# Generic files authorized
 !/.gitignore
-!/*.php
-!/*.py
+!/LICENSE
+!/*.md
+!/locales/*.txt
+
+# Sources files extensions
 !/*.adb
 !/*.c
+!/*.php
+!/*.py
