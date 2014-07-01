@@ -166,10 +166,10 @@ while($continue) {
    sleep(3);
 
    // Score calculation
-   $score = 2 * $max - $attempt_count - $spend_time;
+   $actual_score = 2 * $max - $attempt_count - $spend_time;
 
    if(MULTI == $mode) {
-      $player[$turn]['score']      = $score;
+      $player[$turn]['score']      = $actual_score;
       $player[$turn]['attemps']    = $attempt_count;
       $player[$turn]['spend_time'] = $spend_time;
    }
@@ -237,7 +237,7 @@ while($continue) {
             $player_name,
             $attempt_count,
             floor($spend_time / 60) .' min ' . $spend_time % 60 . ' s',
-            $score,
+            $actual_score,
             date('Y-m-d')
          );
 
