@@ -258,22 +258,23 @@ while continue_game :
         title    = lang[22].strip().center(76)
         names    = lang[23].strip().center(17)
         attempts = lang[24].strip().center(10)
-        time     = lang[25].strip().center(10)
+        time_str = lang[25].strip().center(10)
         score    = lang[26].strip().center(10)
         date     = lang[27].strip().center(17)
 
         print "/******************************************************************************\\"
         print "|", title, "|"
         print "|------------------------------------------------------------------------------|"
-        print "|", names, "|", attempts, "|", time, "|", score, "|", date, "|"
+        print "|", names, "|", attempts, "|", time_str, "|", score, "|", date, "|"
         print "|------------------------------------------------------------------------------|"
         for player_datas in best_scores :
-            player_name     = player_datas[0].ljust(17)
-            player_attempts = str(player_datas[1]).center(10)
-            player_time     = str(player_datas[2]).center(10)
-            player_score    = str(player_datas[3]).center(10)
-            player_date     = str(player_datas[4]).center(17)
-            print "|", player_name, "|", player_attempts, "|", player_time, "|", player_score, "|", player_date, "|"
+            name_of_player     = player_datas[0]
+            name_of_player     = name_of_player.decode('UTF-8').ljust(17)
+            attempts_of_player = str(player_datas[1]).center(10)
+            time_of_player     = str(player_datas[2]).center(10)
+            score_of_player    = str(player_datas[3]).center(10)
+            date_of_player     = str(player_datas[4]).center(17)
+            print "|", name_of_player, "|", attempts_of_player, "|", time_of_player, "|", score_of_player, "|", date_of_player, "|"
 
 
         print "\******************************************************************************/"
