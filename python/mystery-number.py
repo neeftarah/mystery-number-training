@@ -220,82 +220,110 @@ while continue_game :
 
     # 7. Scores
     if (SOLO == mode or 2 == turn) :
+        # Prepare Score tab strings
+        title     = lang[22].strip().center(76)
+        names     = lang[23].strip().center(17)
+        attempts  = lang[24].strip().center(10)
+        time_str  = lang[25].strip().center(12)
+        score_str = lang[26].strip().center(15)
+        date      = lang[27].strip().center(10)
+
+        # Multiplayer mode game
         if (MULTI == mode) :
-            # Player 1 : attemps = x spend time = m min s s  score = Score 1
-            print lang[18] % (player[1]['name'].capitalize(), player[1]['attemps'], math.floor(player[1]['spend_time'] / 60), player[1]['spend_time'] % 60, player[1]['score'])
-            # Player 2 : attemps = x spend time = m min s s  score = Score 2
-            print lang[18] % (player[2]['name'].capitalize(), player[2]['attemps'], math.floor(player[2]['spend_time'] / 60), player[2]['spend_time'] % 60, player[2]['score'])
+            clearscreen()
+            print "/******************************************************************************\\"
+            print "|", title, "|"
+            print "|------------------------------------------------------------------------------|"
+            print "|", names, "|", attempts, "|", time_str, "|", score_str, "|", date, "|"
+            print "|------------------------------------------------------------------------------|"
 
-            if (player[1]['score'] > player[2]['score']) :
-                print lang[19].strip() % (player[1]['name'].capitalize())       # Player 1 win
+            today = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d')
+
+            # Player 1
+            name_of_player     = player[1]['name'].capitalize()
+            name_of_player     = name_of_player.decode('UTF-8').ljust(17)
+            attempts_of_player = str(player[1]['attemps']).center(10)
+            time_of_player     = str(str(math.floor(player[1]['spend_time'] / 60)) + " min" + str(player[1]['spend_time'] % 60) + " s").center(12)
+            score_of_player    = str(player[1]['score']).center(15)
+            date_of_player     = str(today).center(10)
+            print "| " + name_of_player + " | " + attempts_of_player + " | " + time_of_player + " | " + score_of_player + " | " + date_of_player, "|"
+
+            # Player 2
+            name_of_player     = player[2]['name'].capitalize()
+            name_of_player     = name_of_player.decode('UTF-8').ljust(17)
+            attempts_of_player = str(player[2]['attemps']).center(10)
+            time_of_player     = str(str(math.floor(player[2]['spend_time'] / 60)) + " min" + str(player[2]['spend_time'] % 60) + " s").center(12)
+            score_of_player    = str(player[2]['score']).center(15)
+            date_of_player     = str(today).center(10)
+            print "| " + name_of_player + " | " + attempts_of_player + " | " + time_of_player + " | " + score_of_player + " | " + date_of_player, "|"
+
+            print "|------------------------------------------------------------------------------|"
+
+            if (player[1]['score'] == player[2]['score']) :
+                print "|" + lang[21].strip().center(77), "|"                                         # Match null
+            elif (player[1]['score'] > player[2]['score']) :
+                print "|" + str(lang[19].strip() % (player[1]['name'].capitalize())).center(77), "|" # Player 1 win
             elif (player[2]['score'] > player[1]['score']) :
-                print lang[19].strip() % (player[2]['name'].capitalize())       # Player 2 win
-            else :
-                print lang[21].strip()                                          # Match null
+                print "|" + str(lang[19].strip() % (player[2]['name'].capitalize())).center(77), "|" # Player 2 win
 
-        # Get previous best scores
-        best_scores = []
-        if os.path.isfile('scores.txt') :
-            fp = open('scores.txt', 'r')
-            lines = fp.readlines()
-            for line in lines  :
-                best_scores.append( line.strip().split('|'))
-            fp.close()
+            print "\******************************************************************************/"
 
-        # Add pplayer score if  it's a solo game
-        today = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d')
-        if (SOLO == mode) :
+        # Solo mode game
+        else :
+            # Get previous best scores
+            best_scores = []
+            if os.path.isfile('scores.txt') :
+                fp = open('scores.txt', 'r')
+                lines = fp.readlines()
+                for line in lines :
+                    best_scores.append(line.strip().split('|'))
+                fp.close()
+
+            # Add player score if it's a solo game
+            today = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d')
             best_scores.append([player_name, attempt_count, str(int(math.floor(spend_time / 60))) + 'min ' + str(spend_time % 60) + 's', score, today])
 
 
-        # Order Array
-        for i in range(0, len(best_scores) - 1):
-            for j in range(i + 1, len(best_scores)) :
-                if (best_scores[j][3] > best_scores[i][3]) :
-                    tmp_tab        = best_scores[i]
-                    best_scores[i] = best_scores[j]
-                    best_scores[j] = tmp_tab
+            # Order Array
+            for i in range(0, len(best_scores) - 1):
+                for j in range(i + 1, len(best_scores)) :
+                    if (best_scores[j][3] > best_scores[i][3]) :
+                        tmp_tab        = best_scores[i]
+                        best_scores[i] = best_scores[j]
+                        best_scores[j] = tmp_tab
 
-        # Delete the last line if  more than 10 lines
-        if len(best_scores) > 10 :
-            best_scores.pop()
-
-
-        # Show best scores
-        title    = lang[22].strip().center(76)
-        names    = lang[23].strip().center(17)
-        attempts = lang[24].strip().center(10)
-        time_str = lang[25].strip().center(10)
-        score    = lang[26].strip().center(10)
-        date     = lang[27].strip().center(17)
-
-        print "/******************************************************************************\\"
-        print "|", title, "|"
-        print "|------------------------------------------------------------------------------|"
-        print "|", names, "|", attempts, "|", time_str, "|", score, "|", date, "|"
-        print "|------------------------------------------------------------------------------|"
-        for player_datas in best_scores :
-            name_of_player     = player_datas[0]
-            name_of_player     = name_of_player.decode('UTF-8').ljust(17)
-            attempts_of_player = str(player_datas[1]).center(10)
-            time_of_player     = str(player_datas[2]).center(10)
-            score_of_player    = str(player_datas[3]).center(10)
-            date_of_player     = str(player_datas[4]).center(17)
-            print "|", name_of_player, "|", attempts_of_player, "|", time_of_player, "|", score_of_player, "|", date_of_player, "|"
+            # Delete the last line if  more than 10 lines
+            if len(best_scores) > 10 :
+                best_scores.pop()
 
 
-        print "\******************************************************************************/"
+            # Show best scores
+            clearscreen()
+            print "/******************************************************************************\\"
+            print "|", title, "|"
+            print "|------------------------------------------------------------------------------|"
+            print "|", names, "|", attempts, "|", time_str, "|", score_str, "|", date, "|"
+            print "|------------------------------------------------------------------------------|"
+            for player_datas in best_scores :
+                name_of_player     = player_datas[0]
+                name_of_player     = name_of_player.decode('UTF-8').ljust(17)
+                attempts_of_player = str(player_datas[1]).center(10)
+                time_of_player     = str(player_datas[2]).center(12)
+                score_of_player    = str(player_datas[3]).center(15)
+                date_of_player     = str(player_datas[4]).center(10)
+                print "|", name_of_player, "|", attempts_of_player, "|", time_of_player, "|", score_of_player, "|", date_of_player, "|"
 
-        # Save best scores if  it's a solo game
-        if SOLO == mode :
+
+            print "\******************************************************************************/"
+
+            # Save best scores
             fp = open('scores.txt', 'w')
 
             for player_datas in best_scores :
                 string = '|'.join(str(data) for data in player_datas)
                 fp.write(string + os.linesep)
 
-        fp.close()
-
+            fp.close()
 
         # 8. New game ?
         valid_input = False

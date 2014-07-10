@@ -228,8 +228,6 @@ while($continue) {
                $best_scores[] = explode('|', trim($line, PHP_EOL));
             }
             fclose($fp);
-         } else {
-            $best_scores = array();
          }
 
          // Add player score
