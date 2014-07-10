@@ -1,4 +1,4 @@
-#! /usr/local/bin/python3.4
+#! /usr/local/bin/python2.7
 # -*- coding:Utf-8 -*
 
 import math
@@ -89,26 +89,30 @@ if (SOLO == mode) :
 else :
     clearscreen()
 
+    player = {}
     try:
-        player[1]['name'] = input(lang[10].strip() % (1))
+        player[1] = {}
+        player[1]['name'] = raw_input(lang[10].strip() % (1))
     except ValueError:
         print lang[29].strip()
         time.sleep(1)
 
     try:
-        player[2]['name'] = input(lang[10].strip() % (2))
+        player[2] = {}
+        player[2]['name'] = raw_input(lang[10].strip() % (2))
     except ValueError:
         print lang[29].strip()
         time.sleep(1)
 
 # 5. Select a difficulty...
+input_text = 0
 while input_text not in [1, 2, 3, 4] :
     clearscreen()
     print lang[4]                                                   # Please select a difficulty
-    print '1. ' . lang[5].strip() % (1, 100)                        # From %d to %d
-    print '2. ' . lang[5].strip() % (1, 1000)                       # From %d to %d
-    print '3. ' . lang[5].strip() % (1, 10000)                      # From %d to %d
-    print '4. ' . lang[6].strip()                                   # Personalized difficulty
+    print '1. ', lang[5].strip() % (1, 100)                        # From %d to %d
+    print '2. ', lang[5].strip() % (1, 1000)                       # From %d to %d
+    print '3. ', lang[5].strip() % (1, 10000)                      # From %d to %d
+    print '4. ', lang[6].strip()                                   # Personalized difficulty
     try:
         input_text = int(raw_input())
     except ValueError:
@@ -118,6 +122,7 @@ difficulty = input_text
 
 # Ask for the maximum number for the personalized difficulty
 if 4 == difficulty :
+    input_text = 0
     while input_text < 1 :
         clearscreen()
         print lang[7].strip()                                       # Please, enter the maximum number
@@ -147,6 +152,7 @@ while continue_game :
 
     # MULTI mode, enter the mystery number
     if (MULTI == mode) :
+        input_text = 0
         while input_text < 1 or input_text > maximum :
             clearscreen()
             if 1 == turn :
@@ -167,12 +173,11 @@ while continue_game :
 
             # You must enter a smaller number ! This one is greater than the maximum difficulty
             if input_text > maximum :
-                print lang[20].strip()
+                print lang[20].strip(),  ' (',  maximum,  ')'
                 time.sleep(3)
         mystery_number = input_text
     else :
         mystery_number = random.randint(0, maximum)
-
 
     clearscreen()
     if (SOLO == mode) :
@@ -184,6 +189,7 @@ while continue_game :
     # 6. Game
     start_time    = int(time.time())
     attempt_count = 0
+    input_text    = 0
     while input_text != mystery_number :
         attempt_count = attempt_count + 1
         print lang[17].strip()                                          # Please, enter a number
@@ -201,6 +207,7 @@ while continue_game :
     spend_time    = int(time.time()) - start_time
     clearscreen()
     print lang[13].strip() % (mystery_number, attempt_count, math.floor(spend_time / 60), spend_time % 60)
+    time.sleep(3)
 
     # Score calculation
     score = 2 * maximum - attempt_count - spend_time
