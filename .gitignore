@@ -5,11 +5,39 @@
 !/.gitignore
 !/LICENSE
 !/*.md
+
+## Locales
+!/locales
+/locales/*
 !/locales/*.txt
 
-# Sources files extensions
-!/*.adb
-!/*.c
-!/*.php
-!/*.py
-!/*.java
+# Langages sources files and documentations
+## ADA
+!/ada
+/ada/*
+!/ada/*.adb
+!/ada/*.md
+
+## C
+!/c
+/c/*
+!/c/*.c
+!/c/*.md
+
+## PHP
+!/php
+/php/*
+!/php/*.php
+!/php/*.md
+
+## PYTHON
+!/python
+/python/*
+!/python/*.py
+!/python/*.md
+
+# JAVA
+!/java
+/java/*
+!/java/*.java
+!/java/*.md
